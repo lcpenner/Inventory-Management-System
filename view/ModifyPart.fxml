@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyPartController">
+   <children>
+      <GridPane layoutX="-36.0" layoutY="1.0" prefHeight="191.0" prefWidth="359.0" translateX="50.0" translateY="100.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="108.66668701171875" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="10.0" prefWidth="125.99997965494791" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="10.0" prefWidth="46.333333333333314" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="10.0" prefWidth="80.33331298828125" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="ID" />
+            <Label layoutX="10.0" layoutY="17.0" text="Name" GridPane.rowIndex="1" />
+            <Label layoutX="10.0" layoutY="47.0" text="Inv" GridPane.rowIndex="2" />
+            <Label layoutX="10.0" layoutY="77.0" text="Price/Cost" GridPane.rowIndex="3" />
+            <Label layoutX="10.0" layoutY="107.0" text="Max" GridPane.rowIndex="4" />
+            <Label fx:id="modifyPartTypeLabel" layoutX="10.0" layoutY="137.0" prefHeight="17.0" prefWidth="100.0" text="Machine ID" GridPane.rowIndex="5" />
+            <TextField fx:id="modifyPartId" editable="false" prefHeight="25.0" prefWidth="134.0" promptText="Auto Gen - Disabled" GridPane.columnIndex="1" />
+            <TextField fx:id="modifyPartNameTxt" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="modifyPartInvTxt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="modifyPartPriceTxt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="modifyPartMaxTxt" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="modifyPartManufacturerTxt" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Min" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="modifyPartMinTxt" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Label layoutX="14.0" layoutY="27.0" text="Modify Part">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="modifyPartInHouseBtn" layoutX="122.0" layoutY="29.0" mnemonicParsing="false" onAction="#onActionModifyPartInHouseBtn" text="In-House">
+         <toggleGroup>
+            <ToggleGroup fx:id="manLocationTG" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="modifyPartOutsourcedBtn" layoutX="240.0" layoutY="29.0" mnemonicParsing="false" onAction="#onActionModifyPartOutsourcedBtn" text="Outsourced" toggleGroup="$manLocationTG" />
+      <Button layoutX="200.0" layoutY="335.0" mnemonicParsing="false" onAction="#onActionModifyPartSave" text="Save" />
+      <Button layoutX="273.0" layoutY="335.0" mnemonicParsing="false" onAction="#onActionDisplayMainScreen" text="Cancel" />
+   </children>
+</AnchorPane>
